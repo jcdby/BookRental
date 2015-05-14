@@ -2,7 +2,7 @@ package kr.ac.ajou.lazybones.user;
 
 
 import kr.ac.ajou.lazybones.config.RootConfig;
-import kr.ac.ajou.lazybones.data.User;
+import kr.ac.ajou.lazybones.repos.entities.User;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;

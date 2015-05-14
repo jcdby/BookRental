@@ -1,6 +1,6 @@
 package kr.ac.ajou.lazybones.user;
 
-import kr.ac.ajou.lazybones.data.User;
+import kr.ac.ajou.lazybones.repos.entities.User;
 
 public interface UserManager {
 	User insert(String id, String name, String pwd);
