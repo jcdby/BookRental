@@ -4,4 +4,5 @@ import kr.ac.ajou.lazybones.repos.entities.User;
 public interface UserRepository {
 	User save(User user);
 	User findById(String id);
+	User delete(User u);
 }
