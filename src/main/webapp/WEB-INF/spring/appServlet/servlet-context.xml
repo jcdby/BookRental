@@ -21,18 +21,12 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<context:component-scan base-package="kr.ac.ajou.lazybones.bookrental" />
 	<context:component-scan base-package="kr.ac.ajou.lazybones.user" />
-=======
 	<context:component-scan base-package="net.jcdby.myTest" />
 	<context:component-scan base-package="kr.ac.ajou" />
->>>>>>> origin/master
-=======
 	<context:component-scan base-package="net.jcdby.myTest" />
 	<context:component-scan base-package="kr.ac.ajou" />
->>>>>>> origin/master
 	
 	
 	
