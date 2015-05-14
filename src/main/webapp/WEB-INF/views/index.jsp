@@ -30,8 +30,13 @@
       <div class="six column">
         <h1>Welcome</h1>
         <p>Welcome to hell.</p>
-		<a class="button">Book Search</a>
+<<<<<<< HEAD
+		<a class="button" href="booklist">Book Search</a>
 		<a class="button">Check my book reservations</a>
+=======
+		<a class="button" href="<c:url value="/search" />">Book Search</a>
+		<a class="button" href="<c:url value="/reservation" />">Check my book reservations</a>
+>>>>>>> origin/master
       </div>
     </section>
   </div>
