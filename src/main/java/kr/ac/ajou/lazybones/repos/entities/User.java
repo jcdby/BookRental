@@ -11,7 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-@Entity
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 @Entity
 public class User {
 
@@ -28,7 +33,6 @@ public class User {
 	// @Size(min = 2, max = 60)
 	@Column
 	private String name;
-	private String pwd;
 
 	// @NotNull
 	// @Size(min = 5, max = 25)
@@ -40,9 +44,8 @@ public class User {
 
 	public User() {
 	}
-	
+
 	public User(String id, String name, String pwd) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.pwd = pwd;
@@ -71,10 +74,14 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	
+
 	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name
-				+ ", pwd=" + pwd + "]";
+	public boolean equals(Object that) {
+		return EqualsBuilder.reflectionEquals(this, that, "id", "name", "pwd");
+	}
+
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, "id", "name", "pwd");
 	}
 }
