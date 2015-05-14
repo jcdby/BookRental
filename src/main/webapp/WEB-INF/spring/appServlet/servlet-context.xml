@@ -20,13 +20,8 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
-	<context:component-scan base-package="kr.ac.ajou.lazybones.bookrental" />
-	<context:component-scan base-package="kr.ac.ajou.lazybones.user" />
-	<context:component-scan base-package="net.jcdby.myTest" />
-	<context:component-scan base-package="kr.ac.ajou" />
-	<context:component-scan base-package="net.jcdby.myTest" />
-	<context:component-scan base-package="kr.ac.ajou" />
+
+	<context:component-scan base-package="kr.ac.ajou.lazybones.*" />
 	
 	
 	

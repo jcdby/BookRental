@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +22,10 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-
+  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+  
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -48,7 +51,7 @@
 			<br>이 책은 저자 김경집의 일상이자 소명이었던 가톨릭대학교의 인간학 강의가 바탕이 되었다. 독자들은 12개 분야의 학문을 통해 우리 시대 지식사회의 큰흐름을 한눈에 통찰하는 동시에 세상 이해의 한 방편을 마련할 수 있을 것이다. 이는 고대로부터 현대까지 인류가 이룩한 지적 성취물들을 성실하게 탐독하는 한편, 끊임없이 우리 현실을 돌아보기했던 인문학자 김경집의 30년간의 치열한 행적 덕분이다.</p>
 		</div>
 		
-			<h4>Book is currently available.</h4>
+			<h4>This book is currently available.</h4>
 			<form>
 				<div class="row">
 					<div class="six columns">

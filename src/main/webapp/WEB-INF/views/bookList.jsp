@@ -1,5 +1,8 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" session="false" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
   <!-- Basic Page Needs
@@ -19,9 +22,14 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+  
+  <!-- JavaScript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- embed jQuery javascript file here -->
+    
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -30,6 +38,9 @@
 </head>
 <body>
 
+
+
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
@@ -37,11 +48,15 @@
       <div>
         <h1>Book Search</h1>
         
-		<div>
-		<!-- REFER  jQuery autocomplete -->
-			<label for="search">Keyword </label>
-			<input id="search">
-		</div>
+		
+		
+		<form action="<c:url value="/Book/Search"/>" method="get">
+			<!-- <label for="query">Keyword </label> -->
+			<input name="query" type="text" placeholder="Input keywords here">
+			
+			<input class="button" type="submit" value="Search">
+		</form>
+		
 		
 		<!-- Inflate search results here -->
 		<div>
@@ -55,7 +70,14 @@
 					</tr>
 				</thead>
 				
-				<tbody>
+				<tbody id="books">				
+				
+				<script>
+				
+				$("#books");
+				
+				</script>
+				
 					<tr>
 						<td>분노도 습관이다</td>
 						<td>9788969520678</td>

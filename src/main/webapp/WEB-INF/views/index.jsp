@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" session="false" %>
+<html>
 <head>
 
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Welcome to our BookRental</title>
+  <title>Your page title here :)</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
 
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
@@ -30,12 +40,8 @@
       <div class="six column">
         <h1>Welcome</h1>
         <p>Welcome to hell.</p>
-		<a class="button" href="booklist">Book Search</a>
-		<a class="button">Check my book reservations</a>
-		<a class="button" href="<c:url value="/search" />">Book Search</a>
-		<a class="button" href="<c:url value="/reservation" />">Check my book reservations</a>
-		<a class="button" href="<c:url value="/search" />">Book Search</a>
-		<a class="button" href="<c:url value="/reservation" />">Check my book reservations</a>
+		<a class="button" href="<c:url value="/Book"/>">Book Search</a>
+		<a class="button" href="<c:url value="/Reservation"/>">Check my book reservations</a>
       </div>
     </section>
   </div>

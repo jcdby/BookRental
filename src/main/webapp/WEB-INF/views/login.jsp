@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +22,10 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
-
+  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+  
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -37,10 +40,10 @@
       <div class="six column">
         <h1>Login</h1>
         <p>Not a member yet? Please <a href="">join us</a>.</p>
-		<form method="post" action="login_ok.php">
+		<form method="post" action="<c:url value="/Login/"/>">
 			<div>
 				<label class="field-label">Id</label>
-				<input id="user_id" name="user_id" type="text" required="required">
+				<input id="id" name="id" type="text" required="required">
 			</div>
 			<div>
 				<label class="field-label">Password</label>
