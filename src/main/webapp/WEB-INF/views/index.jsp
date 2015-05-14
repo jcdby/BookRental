@@ -22,13 +22,13 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
-  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
-  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/custom.css"/>">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 
 </head>
 <body>

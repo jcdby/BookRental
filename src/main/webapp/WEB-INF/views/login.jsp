@@ -22,13 +22,13 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
-  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
-  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/custom.css"/>">
   
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
 
 </head>
 <body>
@@ -39,7 +39,7 @@
     <section class="row header">
       <div class="six column">
         <h1>Login</h1>
-        <p>Not a member yet? Please <a href="">join us</a>.</p>
+        <p>Not a member yet? Please <a href="<c:url value="/Register/"/>">join us</a>.</p>
 		<form method="post" action="<c:url value="/Login/"/>">
 			<div>
 				<label class="field-label">Id</label>

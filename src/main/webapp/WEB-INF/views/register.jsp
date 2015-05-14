@@ -22,9 +22,9 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css"/>">
-  <link rel="stylesheet" href="<c:url value="/resources/css/skeleton.css"/>">
-  <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/normalize.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/skeleton.css"/>">
+  <link rel="stylesheet" href="<c:url value="/css/custom.css"/>">
   
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -38,8 +38,8 @@
   <div class="container">
     <section class="row header">
       <div class="six column">
-        <h1>Login</h1>
-        <form method="post" action="<c:url value="/Login/"/>">
+        <h1>Join us!</h1>
+        <form method="post" action="<c:url value="/Register/"/>">
 			<div>
 				<label class="field-label">Id</label>
 				<input id="id" name="id" type="text" required="required">
@@ -53,7 +53,7 @@
 				<label class="field-label">Password</label>
 				<input id="password" name="password" type="password" required="required" autocomplete="off">		
 			</div>
-			<input class="button" type="submit" value="Log in">
+			<input class="button" type="submit" value="Register">
 	
 		</form>
       </div>

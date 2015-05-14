@@ -15,8 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 
 @Configuration
-@EnableJpaRepositories("kr.ac.ajou.layzybones")
-
+@EnableJpaRepositories("kr.ac.ajou.lazybones")
 public class DataConfig {
 
 	@Bean
@@ -45,5 +44,4 @@ public class DataConfig {
 
 		return transactionManager;
 	}
-	
 }
