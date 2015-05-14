@@ -1,8 +1,12 @@
 package kr.ac.ajou.lazybones.repos;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import kr.ac.ajou.lazybones.repos.entities.User;
 
-public interface UserRepository {
-	User save(User user);
+public interface UserRepository extends JpaRepository<User, Long> {
+	<S extends User>List<S> save(User user);
 	User findById(String id);
-	User delete(User u);
+	void delete(User u);
 }

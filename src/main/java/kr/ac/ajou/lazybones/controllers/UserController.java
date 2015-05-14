@@ -17,48 +17,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class UserController {
 
-//private UserRepository userRepository;
-//
-//	@Autowired
-//	public UserController(UserRepository userRepository) {
-//		this.userRepository = userRepository;
-//	}
-
 	@RequestMapping(value = "/Register", method = RequestMethod.GET)
 	public String showRegistrationForm() {
-		return "registerForm";
+		return "register";
 	}
 
 	@RequestMapping(value = "/Register", method = RequestMethod.POST)
 	public String processRegistration(@Valid User user, Errors errors) {
 		if (errors.hasErrors()) {
-			return "registerForm";
+			return "register";
 		}
 
-//		userRepository.save(user);
 		return "redirect:/User/" + user.getId();
 	}
 
 	@RequestMapping(value = "/User/{id}", method = RequestMethod.GET)
 	public String showSpitterProfile(@PathVariable String id, Model model) {
-//		User user = userRepository.findById(id);
-//		model.addAttribute(user);
+
 		return "profile";
 	}
 	
 	
-	/**
-	 * Simply selects the login view to render by returning its name.
-	 */
-	@RequestMapping(value = "/Login", method = RequestMethod.GET)
-	public String loginPageLoad(Model model) {
-		return "login";
+	@RequestMapping(value="/Login", method=RequestMethod.GET)
+	public String login() {
+			return "login";
 	}
 
-	/**
-	 * Login
-	 */
-	@RequestMapping(value = "/Login", method = RequestMethod.POST)
+	@RequestMapping(value="/Login", method=RequestMethod.POST)
 	public Boolean login(HttpServletRequest request) {
 		try {
 			// if(login condition is failed) {
@@ -72,9 +57,6 @@ public class UserController {
 		return true;
 	}
 
-	/**
-	 * Checking if already login succeed
-	 */
 	@RequestMapping(value = "/Logincheck")
 	public void loginCheck(HttpServletRequest request) {
 		request.getSession().setAttribute("logininfo", true);

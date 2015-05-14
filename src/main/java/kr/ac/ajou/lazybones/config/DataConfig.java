@@ -13,7 +13,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-
 @Configuration
 @EnableJpaRepositories("kr.ac.ajou.lazybones")
 public class DataConfig {
