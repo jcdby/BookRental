@@ -19,11 +19,5 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/Book", method= RequestMethod.GET)
-	public String getBookList(Model model)
-	{
-		
-		return "bookList";
-	}
 	
 }

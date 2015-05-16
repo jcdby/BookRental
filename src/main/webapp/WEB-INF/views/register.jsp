@@ -39,7 +39,7 @@
     <section class="row header">
       <div class="six column">
         <h1>Join us!</h1>
-        <form method="post" action="<c:url value="/Register/"/>">
+        <form method="post" action="<c:url value="/User/Register/"/>">
 			<div>
 				<label class="field-label">Id</label>
 				<input id="id" name="id" type="text" required="required">

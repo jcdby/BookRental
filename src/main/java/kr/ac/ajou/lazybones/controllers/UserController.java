@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class UserController {
 
-	@RequestMapping(value = "/Register", method = RequestMethod.GET)
+	@RequestMapping(value = "/User/Register", method = RequestMethod.GET)
 	public String showRegistrationForm() {
 		return "register";
 	}
 
-	@RequestMapping(value = "/Register", method = RequestMethod.POST)
+	@RequestMapping(value = "/User/Register", method = RequestMethod.POST)
 	public String processRegistration(@Valid User user, Errors errors) {
 		if (errors.hasErrors()) {
 			return "register";
