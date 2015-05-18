@@ -6,8 +6,10 @@ import kr.ac.ajou.lazybones.repos.entities.Book;
 
 public interface BookEntityManager {
 	
-	Book insert(String title, String desc);
-	Book findone(long id);
+	Book findOneBook(long id);
 	List<Book> findAllBooks();
+	int update(Book b);
+	int delete(Book b);
+	Book insert(String title, String desc, String noisbn);
 	
 }

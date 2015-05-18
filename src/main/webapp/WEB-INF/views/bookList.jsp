@@ -93,6 +93,15 @@
 						<td><a href="">Detail</a></td>
 					</tr>
 					
+					<c:forEach items="${books}" var="book">
+						<tr>
+							<td><c:out value="${book.title}"></c:out></td>
+							<td><c:out value="${book.NoISBN}"></c:out></td>
+							<td><c:out value="${book.title}"></c:out></td>
+							<td><a href="">Detail</a></td>
+						</tr>
+					</c:forEach>
+					
 					
 				</tbody>
 			</table>

@@ -23,7 +23,31 @@ public class Book {
 	@Column(name="description")	
 	private String description;
 	
+	private String NoISBN;
 	
+	
+	public Book(String title, String description, String noISBN) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.NoISBN =noISBN;
+	}
+	
+		public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+		
+	public String getNoISBN() {
+			return NoISBN;
+		}
+
+		public void setNoISBN(String noISBN) {
+			NoISBN = noISBN;
+		}
+
+
+
 	//Reservations for book will be fetched when they needed. 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Reservation> reservations;
