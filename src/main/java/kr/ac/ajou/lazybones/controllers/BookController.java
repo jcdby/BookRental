@@ -16,8 +16,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BookController {
 
-	@Autowired
+	
 	private BookEntityManagerImpl bemImpl;
+
+	@Autowired
+	public BookController(BookEntityManagerImpl bemImpl) {
+		super();
+		this.bemImpl = bemImpl;
+	}
 
 	@RequestMapping(value = "/Book", method = RequestMethod.GET)
 	public String getBookList(Model model) {
@@ -52,7 +58,10 @@ public class BookController {
 
 	@RequestMapping(value = "/Book/Detail/{ID}", method = RequestMethod.GET)
 	public String getBookDetail(@PathVariable("ID") int id, Model model) {
-
+		Book oneBook = bemImpl.findOneBook(id);
+		
+		model.addAttribute("requestedBook", oneBook);
+		
 		// Not implemented yet.
 		return "bookDetail";
 	}

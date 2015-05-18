@@ -53,7 +53,7 @@
 						<!-- <label class="field-label">ISBN</label> --> <input id="isbn" class="u-full-width"
 							name="isbn" type="text" required="required" placeholder="ISBN here">
 					</div>
-
+					
 					 <textarea rows="7" class="u-full-width" placeholder="Description here" id="description" name="description"></textarea>
 					
 					<input class="button" type="submit" value="Register">

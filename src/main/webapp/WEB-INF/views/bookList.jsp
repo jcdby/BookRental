@@ -78,21 +78,7 @@
 				
 				</script>
 				
-					<tr>
-						<td>분노도 습관이다</td>
-						<td>9788969520678</td>
-						<td>Available: <a href="">Make a reservation</a></td>
-						<td><a href="">Detail</a></td>
-						
-					</tr>
-					
-					<tr>
-						<td>인문학은 밥이다</td>
-						<td>9788925551562</td>
-						<td>Not available yet: 2015-05-01 ~ 2015-05-31</td>
-						<td><a href="">Detail</a></td>
-					</tr>
-					
+				
 					<c:forEach items="${books}" var="book">
 						<tr>
 							<td><c:out value="${book.title}"></c:out></td>
