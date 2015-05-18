@@ -43,10 +43,10 @@
 		<div class="docs-section">
 			<div style="text-align: center;">
 				<p>
-					Not a member yet? Please <a href="<c:url value="/Register/"/>">join
+					Not a member yet? Please <a href="<c:url value="/User/Register/"/>">join
 						us</a>.
 				</p>
-				<form method="post" action="<c:url value="/Login/"/>">
+				<form method="post" action="<c:url value="/User/Login/"/>">
 					<div>
 						<label class="field-label">Id</label> <input id="id" name="id"
 							type="text" required="required">

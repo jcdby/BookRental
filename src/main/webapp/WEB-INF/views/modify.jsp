@@ -43,22 +43,21 @@
 
 		<div class="docs-section">
 			<div style="text-align: center;">
-				<form method="post" action="<c:url value="/User/Register/"/>">
+				<form method="post" action="<c:url value="/User/Modify/"/>">
 					<div>
-						<label class="field-label">Id</label> <input id="id" name="id"
-							type="text" required="required">
+						<label class="field-label">Id</label> <c:out value="${user.id}" />
 					</div>
 					<div>
-						<label class="field-label">Name</label> <input id="name"
-							name="name" type="text" required="required">
+						<label class="field-label">Name</label> <input id="id" name="id"
+							type="text" required="required" value="<c:out value='${user.name}'/>">
 					</div>
 
 					<div>
 						<label class="field-label">Password</label> <input id="password"
 							name="password" type="password" required="required"
-							autocomplete="off">
+							autocomplete="off" value="<c:out value='${user.pwd}'/>">
 					</div>
-					<input class="button" type="submit" value="Register"> <a
+					<input class="button" type="submit" value="Modify"> <a
 						class="button" href="<c:url value="/"/>">Home</a>
 
 				</form>

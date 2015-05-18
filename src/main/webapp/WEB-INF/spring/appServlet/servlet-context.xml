@@ -22,5 +22,12 @@
 	</beans:bean>
 
 	<context:component-scan base-package="kr.ac.ajou.lazybones" />
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/Reservation" />
+			<beans:bean class="kr.ac.ajou.lazybones.controllers.LoginInterceptor" />
+		</interceptor>
+	</interceptors>
 
 </beans:beans>

@@ -12,12 +12,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 		// TODO Auto-generated method stub
 		try {
-			// store current page path in session
-			request.getSession().setAttribute("currentPage",
-					request.getPathInfo());
+			System.out.println("LoginInterceptor called. logininfo session:" +request.getSession().getAttribute("logininfo"));
 
+			// store current page path in session
+			// request.getSession().setAttribute("currentPage", request.getPathInfo());
+				
 			if (request.getSession().getAttribute("logininfo") == null) {
-				response.sendRedirect("redirect:/Login");
+				response.sendRedirect("User/Login");
 				return false;
 			}
 		} catch (Exception e) {
