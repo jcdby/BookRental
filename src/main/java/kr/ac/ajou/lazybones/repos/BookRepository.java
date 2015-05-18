@@ -26,6 +26,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	public boolean exists(Long arg0);
 
 	public Book findOne(Long arg0);
+	
+	public Book findByTitle(String title);
 
 	public <S extends Book> S save(S arg0);
 
@@ -36,5 +38,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	public List<Book> findAll(Iterable<Long> arg0);
 
 	public <S extends Book> List<S> save(Iterable<S> arg0);
+	
+	
 
 }

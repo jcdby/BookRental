@@ -59,10 +59,21 @@ public class BookController {
 	@RequestMapping(value = "/Book/Detail/{ID}", method = RequestMethod.GET)
 	public String getBookDetail(@PathVariable("ID") int id, Model model) {
 		Book oneBook = bemImpl.findOneBook(id);
-		
 		model.addAttribute("requestedBook", oneBook);
+		return "bookDetail";
+	}
+	
+	@RequestMapping(value = "/Book/Search", method = RequestMethod.GET)
+	public String searchBookbyItsName(@RequestParam(value="title") String title, Model model)
+	{
+		Book oneBook = bemImpl.findOneBookByTitle(title);
+		if(oneBook != null)
+		{model.addAttribute("requestedBook", oneBook);}
+		else
+		{
+			System.out.println("can`t get a book.!!");
+		}
 		
-		// Not implemented yet.
 		return "bookDetail";
 	}
 

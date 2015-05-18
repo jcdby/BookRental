@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" session="false" %>
 <!DOCTYPE html>
@@ -48,11 +49,9 @@
       <div>
         <h1>Book Search</h1>
         
-		
-		
 		<form action="<c:url value="/Book/Search"/>" method="get">
 			<!-- <label for="query">Keyword </label> -->
-			<input name="query" type="text" placeholder="Input keywords here">
+			<input name="title" type="text" placeholder="Input Book title here">
 			
 			<input class="button" type="submit" value="Search">
 		</form>

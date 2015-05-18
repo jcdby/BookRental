@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" session="false"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,31 +37,35 @@
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
-		<section class="row header">
-			<div class="u-full-width">
-
-				<!-- Set action url to modification if Book attribute exists in the 'model'. -->
-				<h1>Book Registration Form</h1>
-				
-				<form method="post" action="<c:url value="/Book/Register"/>">
-					<div>
-						<!-- <label class="field-label">Title</label> --> <input id="title" class="u-full-width"
-							name="title" type="text" required="required" placeholder="Title here">
-					</div>
-
-					<div>
-						<!-- <label class="field-label">ISBN</label> --> <input id="isbn" class="u-full-width"
-							name="isbn" type="text" required="required" placeholder="ISBN here">
-					</div>
-					
-					 <textarea rows="7" class="u-full-width" placeholder="Description here" id="description" name="description"></textarea>
-					
-					<input class="button" type="submit" value="Register">
-
-				</form>
-
-			</div>
+		<section class="header">
+			<!-- Set action url to modification if Book attribute exists in the 'model'. -->
+			<h1>Book Registration Form</h1>
+			<%@ include file="/WEB-INF/views/header.jsp"%>
 		</section>
+
+		<div class="docs-section u-full-width" style="text-align:center;">
+			<form method="post" action="<c:url value="/Book/Register"/>">
+				<div>
+					<!-- <label class="field-label">Title</label> -->
+					<input id="title" class="u-full-width" name="title" type="text"
+						required="required" placeholder="Title here">
+				</div>
+
+				<div>
+					<!-- <label class="field-label">ISBN</label> -->
+					<input id="isbn" class="u-full-width" name="isbn" type="text"
+						required="required" placeholder="ISBN here">
+				</div>
+
+				<textarea rows="7" class="u-full-width"
+					placeholder="Description here" id="description" name="description"></textarea>
+
+				<input class="button" type="submit" value="Register">
+					
+			</form>
+
+		</div>
+
 	</div>
 
 	<!-- End Document

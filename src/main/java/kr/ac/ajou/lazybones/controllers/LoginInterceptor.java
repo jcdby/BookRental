@@ -17,7 +17,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 					request.getPathInfo());
 
 			if (request.getSession().getAttribute("logininfo") == null) {
-				response.sendRedirect("login");
+				response.sendRedirect("redirect:/Login");
 				return false;
 			}
 		} catch (Exception e) {

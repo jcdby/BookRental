@@ -20,12 +20,12 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 @Entity
 public class User {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long identifier;
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	//private Long identifier;
 
 	// @NotNull
 	// @Size(min = 1, max = 16)
+	@Id
 	@Column
 	private String id;
 

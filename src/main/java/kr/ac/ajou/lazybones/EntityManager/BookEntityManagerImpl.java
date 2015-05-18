@@ -20,6 +20,11 @@ public class BookEntityManagerImpl implements BookEntityManager {
 		Book boo = brpo.save(new Book(title, desc, noisbn));
 		return boo;
 	}
+	
+	public Book findOneBookByTitle(String title)
+	{
+		return brpo.findByTitle(title);
+	}
 
 	@Override
 	public Book findOneBook(long id) {
