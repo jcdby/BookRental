@@ -67,13 +67,7 @@ public class BookController {
 	public String searchBookbyItsName(@RequestParam(value="title") String title, Model model)
 	{
 		Book oneBook = bemImpl.findOneBookByTitle(title);
-		if(oneBook != null)
-		{model.addAttribute("requestedBook", oneBook);}
-		else
-		{
-			System.out.println("can`t get a book.!!");
-		}
-		
+		model.addAttribute("requestedBook", oneBook);
 		return "bookDetail";
 	}
 
