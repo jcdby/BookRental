@@ -61,7 +61,7 @@
 					placeholder="Description here" id="description" name="description"></textarea>
 
 				<input class="button" type="submit" value="Register">
-					
+
 			</form>
 
 		</div>

@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,29 +39,30 @@
 	<div class="container">
 		<section class="row header">
 			<h1>Join us!</h1>
-			<%@ include file="/WEB-INF/views/header.jsp"%>
 		</section>
 
-		<div class="docs-section six column">
+		<div class="docs-section">
+			<div style="text-align: center;">
+				<form method="post" action="<c:url value="/Register/"/>">
+					<div>
+						<label class="field-label">Id</label> <input id="id" name="id"
+							type="text" required="required">
+					</div>
+					<div>
+						<label class="field-label">Name</label> <input id="name"
+							name="name" type="text" required="required">
+					</div>
 
-			<form method="post" action="<c:url value="/Register/"/>">
-				<div>
-					<label class="field-label">Id</label> <input id="id" name="id"
-						type="text" required="required">
-				</div>
-				<div>
-					<label class="field-label">Name</label> <input id="name"
-						name="name" type="text" required="required">
-				</div>
+					<div>
+						<label class="field-label">Password</label> <input id="password"
+							name="password" type="password" required="required"
+							autocomplete="off">
+					</div>
+					<input class="button" type="submit" value="Register"> <a
+						class="button" href="<c:url value="/"/>">Home</a>
 
-				<div>
-					<label class="field-label">Password</label> <input id="password"
-						name="password" type="password" required="required"
-						autocomplete="off">
-				</div>
-				<input class="button" type="submit" value="Register">
-
-			</form>
+				</form>
+			</div>
 		</div>
 	</div>
 

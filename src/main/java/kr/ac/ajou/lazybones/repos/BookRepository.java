@@ -38,7 +38,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	public List<Book> findAll(Iterable<Long> arg0);
 
 	public <S extends Book> List<S> save(Iterable<S> arg0);
-	
-	
 
 }

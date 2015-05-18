@@ -14,17 +14,19 @@ public class Reservation {
 
 	@Id
 	private Long id;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="bid")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "bid")
 	private Book book;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="uid")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "uid")
 	private User user;
-	
-	@Column
-	private Date period;
+
+	@Column(name = "rsvd_from")
+	private Date from;
+	@Column(name = "rsvd_to")
+	private Date to;
 
 	public Long getId() {
 		return id;
@@ -50,15 +52,20 @@ public class Reservation {
 		this.user = user;
 	}
 
-	public Date getPeriod() {
-		return period;
+	public Date getFrom() {
+		return from;
 	}
 
-	public void setPeriod(Date period) {
-		this.period = period;
+	public void setFrom(Date from) {
+		this.from = from;
 	}
-	
-	
-	
-		
+
+	public Date getTo() {
+		return to;
+	}
+
+	public void setTo(Date to) {
+		this.to = to;
+	}
+
 }

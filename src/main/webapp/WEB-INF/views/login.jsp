@@ -41,7 +41,7 @@
 			<h1>Login</h1>
 		</section>
 		<div class="docs-section">
-			<div class="six column" style="text-align: center;">
+			<div style="text-align: center;">
 				<p>
 					Not a member yet? Please <a href="<c:url value="/Register/"/>">join
 						us</a>.

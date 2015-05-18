@@ -22,7 +22,7 @@
 				} else {
 			%>
 			<li class="navbar-item"><a class="navbar-link"
-				href="<c:url value="/User/Login"/>">Login</a></li>
+				href="<c:url value="/Login"/>">Login</a></li>
 
 			<%
 				}
