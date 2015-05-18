@@ -2,7 +2,7 @@ package kr.ac.ajou.lazybones.controllers;
 
 import java.util.List;
 
-import kr.ac.ajou.lazybones.EntityManager.BookEntityManagerImpl;
+import kr.ac.ajou.lazybones.entitymanager.BookEntityManagerImpl;
 import kr.ac.ajou.lazybones.repos.entities.Book;
 
 import org.springframework.beans.factory.annotation.Autowired;

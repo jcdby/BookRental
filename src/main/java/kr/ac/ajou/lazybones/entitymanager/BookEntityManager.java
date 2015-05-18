@@ -1,4 +1,4 @@
-package kr.ac.ajou.lazybones.EntityManager;
+package kr.ac.ajou.lazybones.entitymanager;
 
 import java.util.List;
 
