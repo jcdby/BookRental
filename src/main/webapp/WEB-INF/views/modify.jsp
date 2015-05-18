@@ -45,17 +45,18 @@
 			<div style="text-align: center;">
 				<form method="post" action="<c:url value="/User/Modify/"/>">
 					<div>
-						<label class="field-label">Id</label> <c:out value="${user.id}" />
+						<label class="field-label">Id</label> <input id="id" name="id"
+							type="text" value="<c:out value='${user.id}'/>" disabled/>
 					</div>
 					<div>
 						<label class="field-label">Name</label> <input id="name" name="name"
-							type="text" required="required" value="<c:out value='${user.name}'/>">
+							type="text" required="required" value="<c:out value='${user.name}'/>"  />
 					</div>
 
 					<div>
 						<label class="field-label">Password</label> <input id="password"
 							name="password" type="password" required="required"
-							autocomplete="off" value="<c:out value='${user.pwd}'/>">
+							autocomplete="off" value="<c:out value='${user.pwd}'/>" />
 					</div>
 					<input class="button" type="submit" value="Modify"> <a
 						class="button" href="<c:url value="/"/>">Home</a>

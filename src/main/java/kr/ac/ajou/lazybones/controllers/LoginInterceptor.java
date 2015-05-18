@@ -18,7 +18,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			// request.getSession().setAttribute("currentPage", request.getPathInfo());
 				
 			if (request.getSession().getAttribute("logininfo") == null) {
-				response.sendRedirect("User/Login");
+				response.sendRedirect("/BookRental/User/Login");
 				return false;
 			}
 		} catch (Exception e) {

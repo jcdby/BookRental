@@ -28,6 +28,10 @@
 			<mapping path="/Reservation" />
 			<beans:bean class="kr.ac.ajou.lazybones.controllers.LoginInterceptor" />
 		</interceptor>
+		<interceptor>
+			<mapping path="/User/Modify" />
+			<beans:bean class="kr.ac.ajou.lazybones.controllers.LoginInterceptor" />
+		</interceptor>
 	</interceptors>
 
 </beans:beans>

@@ -141,32 +141,13 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-	// Show modify page.
-	@RequestMapping(value = "/User/Modify", method = RequestMethod.GET)
-	public String processModify(HttpServletRequest request, Model model) {
-		try {
-			User user = new User();
-			user = userEntityManagerImpl.findById(request.getSession().getAttribute("userid").toString());
-			
-			/*
-			// If user does not exist
-			if(user == null) {
-				System.out.println("Login again please.");
-				if(request.getSession().getAttribute("logininfo") != null) {
-					request.getSession().removeAttribute("logininfo");
-					request.getSession().removeAttribute("userid");
-				}				
-				return "redirect:/User/Login";
-			}
-		*/
+	// Show Modify page
+		@RequestMapping(value = "/User/Modify", method = RequestMethod.GET)
+		public String showModifyForm(HttpServletRequest request, Model model) throws IOException {
+			User user = userEntityManagerImpl.findById(request.getSession().getAttribute("userid").toString());
 			model.addAttribute(user);
-						
-		} catch (Exception e) {
-			e.printStackTrace();
+			return "modify";
 		}
-		
-		return "modify";
-	}
 	
 	// Process Modification
 	@RequestMapping(value = "/User/Modify", method = RequestMethod.POST)
@@ -174,9 +155,17 @@ public class UserController {
 	public String processModify(@RequestParam(value = "name") String name,
 			@RequestParam(value = "password") String pwd, HttpServletRequest request) {
 		try {
-			User user = new User(request.getSession().getAttribute("id").toString(), name, pwd);
+			// Find by user id of session
+			User user = userEntityManagerImpl.findById(request.getSession().getAttribute("userid").toString());
+			System.out.println(user.getId() + user.getName() + user.getPwd());
+			
+			// Change name and password
+			user.setName(name);
+			user.setPwd(pwd);
+			
+			// Update user
 			userEntityManagerImpl.update(user);
-			System.out.println("Sucess to modify: " + request.getSession().getAttribute("id").toString() + ", " + name + ", " + pwd);
+			//System.out.println("Sucess to modify: " + request.getSession().getAttribute("id").toString() + ", " + name + ", " + pwd);
 			// If registration succeed, go to login page.
 			return "redirect:/User/Modify";
 		} catch (Exception e) {
