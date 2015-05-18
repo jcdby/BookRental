@@ -3,10 +3,12 @@ package kr.ac.ajou.lazybones.EntityManager;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kr.ac.ajou.lazybones.repos.BookRepository;
 import kr.ac.ajou.lazybones.repos.entities.Book;
 
+@Service
 public class BookEntityManagerImpl implements BookEntityManager {
 
 	@Autowired
