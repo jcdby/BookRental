@@ -48,7 +48,7 @@
 						<label class="field-label">Id</label> <c:out value="${user.id}" />
 					</div>
 					<div>
-						<label class="field-label">Name</label> <input id="id" name="id"
+						<label class="field-label">Name</label> <input id="name" name="name"
 							type="text" required="required" value="<c:out value='${user.name}'/>">
 					</div>
 

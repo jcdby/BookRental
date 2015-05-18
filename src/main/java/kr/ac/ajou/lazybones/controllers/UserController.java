@@ -180,6 +180,7 @@ public class UserController {
 			// If registration succeed, go to login page.
 			return "redirect:/User/Modify";
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.err.println("Fail to modify");
 			return "redirect:/User/Modify";
 		}
