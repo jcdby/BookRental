@@ -96,9 +96,9 @@
 					<c:forEach items="${books}" var="book">
 						<tr>
 							<td><c:out value="${book.title}"></c:out></td>
-							<td><c:out value="${book.NoISBN}"></c:out></td>
-							<td><c:out value="${book.title}"></c:out></td>
-							<td><a href="">Detail</a></td>
+							<td><c:out value="${book.noISBN}"></c:out></td>
+							<td>Not implemented yet.</td>
+							<td><a href="<c:url value="/Book/Detail/${book.identifier}"/>">Detail</a></td>
 						</tr>
 					</c:forEach>
 					

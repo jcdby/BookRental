@@ -11,12 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-
- 
 @Controller
 public class BookController {
-	
+
 	@Autowired
 	private BookEntityManagerImpl bemImpl;
 
@@ -32,11 +31,31 @@ public class BookController {
 		return "bookForm";
 	}
 
+	@RequestMapping(value = "/Book/Register", method = RequestMethod.POST)
+	public String registerBook(
+			@RequestParam(required = true) String title,
+			@RequestParam(required = true) String description,
+			@RequestParam(value = "isbn", required = false) String ISBN,
+			Model model) {
+		
+		bemImpl.insert(title, description, ISBN);
+				
+		return "redirect:/Book";
+	}
+
 	@RequestMapping(value = "/Book/Modify/{ID}", method = RequestMethod.GET)
 	public String modifyBook(@PathVariable("ID") int id, Model model) {
-		
-		//Not implemented yet.
+
+		// Not implemented yet.
 		return "bookForm";
 	}
 
+	@RequestMapping(value = "/Book/Detail/{ID}", method = RequestMethod.GET)
+	public String getBookDetail(@PathVariable("ID") int id, Model model) {
+
+		// Not implemented yet.
+		return "bookDetail";
+	}
+
+	
 }

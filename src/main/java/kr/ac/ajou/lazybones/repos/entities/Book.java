@@ -15,6 +15,7 @@ public class Book {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
 	private Long identifier;
 	
 	@Column(name="title")
@@ -23,6 +24,7 @@ public class Book {
 	@Column(name="description")	
 	private String description;
 	
+	@Column(name="isbn")
 	private String NoISBN;
 	
 	
