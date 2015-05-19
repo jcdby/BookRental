@@ -11,11 +11,12 @@
 			<%
 				//Get login status from session attribute
 				Boolean isLoggedIn = (Boolean) session.getAttribute("logininfo");
+				String userid = (String) session.getAttribute("userid");
 
 				if (isLoggedIn != null) {
 			%>
 			<li class="navbar-item"><a class="navbar-link"
-				href="<c:url value="/User/Modify"/>">Username</a></li>
+				href="<c:url value="/User/Modify"/>"><%= userid %></a></li>
 			<li class="navbar-item"><a class="navbar-link"
 				href="<c:url value="/User/Logout"/>">Logout</a></li>
 			<%
