@@ -64,12 +64,11 @@ public class BookController {
 	}
 	
 	@RequestMapping(value = "/Book/Search", method = RequestMethod.GET)
-	public String searchBookbyItsName(@RequestParam(value="title") String title, Model model)
+	public String searchAndShowSimilarBooks(@RequestParam(value="title") String title, Model model)
 	{
-		Book oneBook = bemImpl.findOneBookByTitle(title);
-		model.addAttribute("requestedBook", oneBook);
-		return "bookDetail";
+		List<Book> similarBooks = bemImpl.findSimilarBooksByTitle(title);
+		model.addAttribute("books", similarBooks);
+		return "bookList";
 	}
 
-	
 }

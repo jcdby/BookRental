@@ -56,6 +56,10 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	public Book findOneBookByTitle(String title){
 		return brpo.findByTitle(title);
 	}
-
 	
+	@Override
+	public List<Book> findSimilarBooksByTitle(String title) {
+		// TODO Auto-generated method stub
+		return brpo.findSimilarBooksByTitle(title);
+	}
 }

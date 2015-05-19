@@ -2,6 +2,8 @@ package kr.ac.ajou.lazybones.entitymanager;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
+
 import kr.ac.ajou.lazybones.repos.entities.Book;
 
 public interface BookEntityManager {
@@ -12,5 +14,6 @@ public interface BookEntityManager {
 	int delete(Book b);
 	Book insert(String title, String desc, String noisbn);
 	Book findOneBookByTitle(String title);
+	List<Book> findSimilarBooksByTitle(String title);
 	
 }
