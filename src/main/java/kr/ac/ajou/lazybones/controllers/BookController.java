@@ -2,8 +2,12 @@ package kr.ac.ajou.lazybones.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import kr.ac.ajou.lazybones.entitymanager.BookEntityManagerImpl;
+import kr.ac.ajou.lazybones.entitymanager.ReservationEntityManagerImpl;
 import kr.ac.ajou.lazybones.repos.entities.Book;
+import kr.ac.ajou.lazybones.repos.entities.Reservation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +22,9 @@ public class BookController {
 
 	
 	private BookEntityManagerImpl bemImpl;
+	
+	@Autowired
+	private ReservationEntityManagerImpl resvImpl;
 
 	@Autowired
 	public BookController(BookEntityManagerImpl bemImpl) {
@@ -57,9 +64,17 @@ public class BookController {
 	}
 
 	@RequestMapping(value = "/Book/Detail/{ID}", method = RequestMethod.GET)
-	public String getBookDetail(@PathVariable("ID") int id, Model model) {
-		Book oneBook = bemImpl.findOneBook(id);
+	public String getBookDetail(@PathVariable("ID") Long bid, HttpServletRequest request, Model model) {
+		Book oneBook = bemImpl.findOneBook(bid);
+		
+		if(oneBook==null){
+			return "redirect:/Book";
+		}
+		
+		List<Reservation> reservations = resvImpl.findReservationsByBid(bid);
+		model.addAttribute("reservations", reservations);
 		model.addAttribute("requestedBook", oneBook);
+		
 		return "bookDetail";
 	}
 	

@@ -26,8 +26,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 	public void deleteAll();
 
 	public boolean exists(Long arg0);
-
-	public Book findOne(Long arg0);
+	
+	public Book findByIdentifier(Long arg0);
 	
 	public Book findByTitle(String title);
 

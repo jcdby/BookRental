@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,24 +65,18 @@
 
 				<tbody id="books">
 
-					<script>
-						$("#books");
-					</script>
-
-					<tr>
-						<td>분노도 습관이다</td>
-						<td>9788969520678</td>
-						<td>2015-05-01 ~ 2015-05-31</td>
-						<td><a href="">Detail</a> <a href="">Cancel</a></td>
-
-					</tr>
-
-					<tr>
-						<td>인문학은 밥이다</td>
-						<td>9788925551562</td>
-						<td>2015-05-01 ~ 2015-05-31</td>
-						<td><a href="">Detail</a> <a href="">Cancel</a></td>
-					</tr>
+					<c:forEach items="${reservations}" var="reservation">
+						<tr>
+							<td><c:out value="${reservation.book.title}"></c:out></td>
+							<td><c:out value="${reservation.book.noISBN}"></c:out></td>
+							<td>
+							<fmt:formatDate value="${reservation.from}" pattern="yyyy-MM-dd"/> ~						
+							<fmt:formatDate value="${reservation.to}" pattern="yyyy-MM-dd"/></td>
+							<td><a
+								href="<c:url value="/Book/Detail/${reservation.book.identifier}"/>">Detail</a> / <a
+								href="<c:url value="/Reservation/Cancel/${reservation.id}"/>">Cancel</a></td>
+						</tr>
+					</c:forEach>
 
 
 				</tbody>

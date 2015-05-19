@@ -5,27 +5,36 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Reservation {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
 	private Long id;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "bid")
+	
+	@ManyToOne
+	@JoinColumn(name="bid")
 	private Book book;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "uid")
+	
+	@ManyToOne
+	@JoinColumn(name="uid")
 	private User user;
-
-	@Column(name = "rsvd_from")
+	
+	@DateTimeFormat(iso=DateTimeFormat.ISO.DATE)
+	@Column(name="rsvd_from")
 	private Date from;
-	@Column(name = "rsvd_to")
+	
+	@DateTimeFormat(iso=DateTimeFormat.ISO.DATE)
+	@Column(name="rsvd_to")
 	private Date to;
 
 	public Long getId() {
@@ -68,4 +77,8 @@ public class Reservation {
 		this.to = to;
 	}
 
+	
+	
+	
+		
 }

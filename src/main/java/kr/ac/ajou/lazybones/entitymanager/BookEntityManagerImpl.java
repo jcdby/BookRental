@@ -3,12 +3,14 @@ package kr.ac.ajou.lazybones.entitymanager;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.ajou.lazybones.repos.BookRepository;
 import kr.ac.ajou.lazybones.repos.entities.Book;
 
-@Service
+@Repository
 public class BookEntityManagerImpl implements BookEntityManager {
 
 	@Autowired
@@ -22,9 +24,11 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	}
 
 	@Override
+	@Transactional
 	public Book findOneBook(long id) {
 		// TODO Auto-generated method stub
-		return brpo.findOne(id);
+		return brpo.findByIdentifier(id);
+
 	}
 
 	@Override
@@ -37,6 +41,7 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	public int update(Book b) {
 		if(brpo.findOne(b.getIdentifier()) != null){
 			brpo.save(b);
+			
 			return 1;
 		} 
 		return 0;
@@ -53,6 +58,7 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	}
 	
 	@Override
+	@Transactional
 	public Book findOneBookByTitle(String title){
 		return brpo.findByTitle(title);
 	}

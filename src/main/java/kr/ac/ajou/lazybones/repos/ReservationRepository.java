@@ -2,12 +2,15 @@ package kr.ac.ajou.lazybones.repos;
 
 import java.util.List;
 
+import kr.ac.ajou.lazybones.repos.entities.Book;
 import kr.ac.ajou.lazybones.repos.entities.Reservation;
+import kr.ac.ajou.lazybones.repos.entities.User;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
@@ -36,5 +39,9 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
 	public List<Reservation> findAll(Iterable<Long> arg0);
 
 	public <S extends Reservation> List<S> save(Iterable<S> arg0);
+
+	public List<Reservation> findReservationsByUser(User arg0);
+
+	public List<Reservation> findReservationsByBook(Book arg0);
 
 }

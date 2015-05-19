@@ -4,9 +4,10 @@ import kr.ac.ajou.lazybones.repos.UserRepository;
 import kr.ac.ajou.lazybones.repos.entities.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-@Service
+@Repository
 public class UserEntityManagerImpl implements UserEntityManager {
 
 	@Autowired
