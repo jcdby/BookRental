@@ -38,15 +38,15 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
 		<section class="row header">
-			<h1>Your Info</h1>
+			<h1>Unregister</h1>
 		</section>
 
 		<div class="docs-section">
 			<div style="text-align: center;">
-				<form method="post" action="<c:url value="/User/Modify/"/>">
+				<form method="post" action="<c:url value="/User/Unregister/"/>">
 					<div>
 						<label class="field-label">Id</label> <input id="id" name="id"
-							type="text" value="<c:out value='${user.id}'/>" disabled/>
+							type="text" value="<c:out value='${user.id}'/>"/>
 					</div>
 					<div>
 						<label class="field-label">Name</label> <input id="name" name="name"
@@ -58,8 +58,7 @@
 							name="password" type="password" required="required"
 							autocomplete="off" value="<c:out value='${user.pwd}'/>" />
 					</div>
-					<input class="button" type="submit" value="Modify"> <a
-						class="button" href="<c:url value="/User/Unregister"/>">Unregister</a> <a
+					<input class="button" type="submit" value="I want to unregister."> <a
 						class="button" href="<c:url value="/"/>">Home</a>
 
 				</form>

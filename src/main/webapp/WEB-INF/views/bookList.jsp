@@ -61,7 +61,6 @@
 						<tr>
 							<th>Name</th>
 							<th>ISBN</th>
-							<th>Status</th>
 							<th>Link</th>
 						</tr>
 					</thead>
@@ -72,7 +71,6 @@
 							<tr>
 								<td><c:out value="${book.title}"></c:out></td>
 								<td><c:out value="${book.noISBN}"></c:out></td>
-								<td>Not implemented yet.</td>
 								<td><a
 									href="<c:url value="/Book/Detail/${book.identifier}"/>">Detail</a></td>
 							</tr>

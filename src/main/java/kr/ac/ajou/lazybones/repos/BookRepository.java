@@ -39,8 +39,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
 	public List<Book> findAll(Iterable<Long> arg0);
 
-	@Query("select b from Book b where b.title like %?1%")
-	public List<Book> findSimilarBooksByTitle(String title);
+	@Query("select b from Book b where upper(b.title) like %?1%")
+	public List<Book> findSimilarBooksByTitle(String upperCaseTitle);
 
 	public <S extends Book> List<S> save(Iterable<S> arg0);
 

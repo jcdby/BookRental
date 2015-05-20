@@ -58,16 +58,24 @@ public class UserController {
 		}
 	}
 	
+	// Show Unregister page
+		@RequestMapping(value = "/User/Unregister", method = RequestMethod.GET)
+		public String showUnregisterForm(HttpServletRequest request, Model model)
+				throws IOException {
+			return "unregister";
+		}
+	
 	// Process Unregistration
 		@RequestMapping(value = "/User/Unregister", method = RequestMethod.POST)
 		// public String processUnrregistration(@Valid User user, Errors errors) {
 		public String processUnrregistration(@RequestParam(value = "id") String id,
 				@RequestParam(value = "name") String name,
-				@RequestParam(value = "password") String pwd) {
+				@RequestParam(value = "password") String pwd, HttpServletRequest request) {
 			try {
 				// Save
 				User user = new User(id, name, pwd);
 				userEntityManagerImpl.delete(user);
+				request.getSession().invalidate();
 				System.out.println("Sucess to unregister: " + id + ", " + name + ", "
 						+ pwd);
 			} catch (Exception e) {
@@ -91,10 +99,9 @@ public class UserController {
 			// If user does not exist
 			if(user == null) {
 				System.out.println("Login failed: " + id + ", " + pwd + "- User doesn't exists");
-				if(request.getSession().getAttribute("logininfo") != null) {
-					request.getSession().removeAttribute("logininfo");
-					request.getSession().removeAttribute("userid");
-				}				
+//				if(request.getSession().getAttribute("logininfo") != null) {
+//					request.getSession().invalidate();
+//				}				
 				return "redirect:/User/Login";
 			}
 			
@@ -115,9 +122,9 @@ public class UserController {
 			e.printStackTrace();
 			return "redirect:/User/Login";
 		}
-		if(request.getSession().getAttribute("logininfo") != null) {
-			request.getSession().removeAttribute("logininfo");
-		}	
+//		if(request.getSession().getAttribute("logininfo") != null) {
+//			request.getSession().removeAttribute("logininfo");
+//		}	
 		return "redirect:/User/Login";
 	}
 
@@ -133,8 +140,7 @@ public class UserController {
 	public String logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		try {
 			// deleting session
-			request.getSession().removeAttribute("logininfo");
-			request.getSession().removeAttribute("userid");			
+			request.getSession().invalidate();	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
