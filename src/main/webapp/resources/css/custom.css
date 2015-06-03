@@ -223,3 +223,17 @@
   .popover-item:first-child .popover-link:hover:after {
     border-bottom-color: #33C3F0; }
 }
+
+#google-book-search {
+	padding: 5%;
+    border-radius: 25px;
+    border: 2px solid #1EAEDB;
+}
+#google-book-search-info {
+	color: #1EAEDB;
+    font-size: 120%;
+}
+#google-book-search-result {
+	font-size: 80%;
+}
+
