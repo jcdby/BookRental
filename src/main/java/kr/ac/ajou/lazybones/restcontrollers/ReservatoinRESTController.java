@@ -11,7 +11,7 @@ public class ReservatoinRESTController {
 	private String getregAddress = "http://localhost:8080/"//PA(Personal Assisstant) server address
 			+ "PAmanager/webresources/RegisterServiceProvider/{SPname}/{ServiceName}/{RedirectionAddress}";//The Personal Assisstant system server address.
 	
-	//the name for registration
+	//the Service Provider name for registration
 	private final String SPname = "BookRental";
 	//the name for retrieving the services in this Service Provider.
 	//uri should be where PA can get services from uri.
