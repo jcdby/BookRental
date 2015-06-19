@@ -1,3 +1,7 @@
+/*
+ * Data Source Configuration
+ */
+
 package kr.ac.ajou.lazybones.config;
 
 import javax.persistence.EntityManagerFactory;

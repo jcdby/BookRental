@@ -1,3 +1,7 @@
+/*
+ * Root Configuration
+ */
+
 package kr.ac.ajou.lazybones.config;
 
 import java.util.regex.Pattern;

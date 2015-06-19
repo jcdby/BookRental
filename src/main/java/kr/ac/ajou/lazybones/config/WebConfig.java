@@ -1,3 +1,7 @@
+/*
+ * Web Resource Configuration
+ */
+
 package kr.ac.ajou.lazybones.config;
 
 import org.springframework.context.annotation.Bean;

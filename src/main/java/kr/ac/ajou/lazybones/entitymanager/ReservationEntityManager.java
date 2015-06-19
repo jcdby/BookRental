@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import kr.ac.ajou.lazybones.repos.entities.Reservation;
-import kr.ac.ajou.lazybones.repos.entities.User;
 
 public interface ReservationEntityManager {
 	Reservation findOneReservation(long id);

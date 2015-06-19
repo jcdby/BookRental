@@ -1,3 +1,6 @@
+/*
+ * Registration to PA
+ */
 package kr.ac.ajou.lazybones.restcontrollers;
 
 import java.util.ArrayList;
@@ -33,7 +36,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ReservationRESTController {
 	
 	private String registrationAddress = "http://210.107.197.150:8080/PAmanager/webresources/Service/Register";//PA(Personal Assisstant) server address
-			//The Personal Assisstant system server address.
+			//The Personal Assistant system server address.
 	
 	@Autowired
 	private ReservationEntityManagerImpl resvEntityManagerImpl;

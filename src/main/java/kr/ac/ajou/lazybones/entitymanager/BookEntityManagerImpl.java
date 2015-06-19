@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.ajou.lazybones.repos.BookRepository;
@@ -18,7 +17,6 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	
 	@Override
 	public Book insert(String title, String desc, String noisbn) {
-		// TODO Auto-generated method stub
 		Book boo = brpo.save(new Book(title, desc, noisbn));
 		return boo;
 	}
@@ -26,14 +24,12 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	@Override
 	@Transactional
 	public Book findOneBook(long id) {
-		// TODO Auto-generated method stub
 		return brpo.findByIdentifier(id);
 
 	}
 
 	@Override
 	public List<Book> findAllBooks() {
-		// TODO Auto-generated method stub
 		return brpo.findAll();
 	}
 
@@ -65,7 +61,6 @@ public class BookEntityManagerImpl implements BookEntityManager {
 	
 	@Override
 	public List<Book> findSimilarBooksByTitle(String title) {
-		// TODO Auto-generated method stub
 		return brpo.findSimilarBooksByTitle(title);
 	}
 }

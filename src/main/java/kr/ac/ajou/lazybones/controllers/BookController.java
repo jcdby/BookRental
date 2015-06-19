@@ -1,3 +1,7 @@
+/*
+ * Controller for handling books
+ */
+
 package kr.ac.ajou.lazybones.controllers;
 
 import java.util.List;
@@ -20,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BookController {
 
-	
 	private BookEntityManagerImpl bemImpl;
 	
 	@Autowired
@@ -32,6 +35,9 @@ public class BookController {
 		this.bemImpl = bemImpl;
 	}
 
+	/*
+	 * Show Book List Page.
+	 */
 	@RequestMapping(value = "/Book", method = RequestMethod.GET)
 	public String getBookList(Model model) {
 		List<Book> AllBooks = bemImpl.findAllBooks();
@@ -39,11 +45,17 @@ public class BookController {
 		return "bookList";
 	}
 
+	/*
+	 * Show Book Register Page.
+	 */
 	@RequestMapping(value = "/Book/Register", method = RequestMethod.GET)
 	public String registerBook(Model model) {
 		return "bookForm";
 	}
 
+	/*
+	 * Submit Book Registration Form.
+	 */
 	@RequestMapping(value = "/Book/Register", method = RequestMethod.POST)
 	public String registerBook(
 			@RequestParam(required = true) String title,
@@ -56,28 +68,28 @@ public class BookController {
 		return "redirect:/Book";
 	}
 
-	@RequestMapping(value = "/Book/Modify/{ID}", method = RequestMethod.GET)
-	public String modifyBook(@PathVariable("ID") int id, Model model) {
-
-		// Not implemented yet.
-		return "bookForm";
-	}
-
+	/*
+	 * Show Book Detail Page (According to Each ID)
+	 */
 	@RequestMapping(value = "/Book/Detail/{ID}", method = RequestMethod.GET)
 	public String getBookDetail(@PathVariable("ID") Long bid, HttpServletRequest request, Model model) {
 		Book oneBook = bemImpl.findOneBook(bid);
 		
+		// No Such ID --> return to /Book
 		if(oneBook==null){
 			return "redirect:/Book";
 		}
 		
+		// Add Models for Reservation Info + Book Detail Info
 		List<Reservation> reservations = resvImpl.findReservationsByBid(bid);
 		model.addAttribute("reservations", reservations);
 		model.addAttribute("requestedBook", oneBook);
 		
 		return "bookDetail";
 	}
-	
+	/*
+	 * Search Book by Title 
+	 */
 	@RequestMapping(value = "/Book/Search", method = RequestMethod.GET)
 	public String searchAndShowSimilarBooks(@RequestParam(value="title") String title, Model model)
 	{
